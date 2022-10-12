@@ -1,13 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 
-body{
-    scroll-behavior: smooth ;
+/*
+    this contain makes a full body as div so scroll snap is possible
+*/
+.contain{
+    scroll-behavior:smooth ;
     scroll-snap-type: y mandatory;
-    
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
 }
 *{
     font-family: 'Poppins', 'sans-serif';
 }
+
 
 .navig{
     font-weight: bold;
@@ -17,8 +23,8 @@ section{
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 100vh;
-    scroll-snap-align: center;
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
 .face {
@@ -49,13 +55,13 @@ section{
 }
 
 .brandname {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
     animation: dash 10s infinite forwards;
   }
   
   @keyframes dash {
     to {
-      stroke-dashoffset: -1000;
+      stroke-dashoffset: -1000  ;
     }
   }
